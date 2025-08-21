@@ -33,6 +33,10 @@
         border-bottom: 1px solid #fff;
         padding-bottom: 5px;
         margin-bottom: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .sidebar ul {
         list-style: none;
@@ -67,8 +71,13 @@
         color: #0a4d8c;
     }
     .main-content p.contact-info {
-        margin: 5px 0 20px 0;
+        margin: 10px 0 20px 0;
         font-size: 14px;
+        line-height: 1.6;
+    }
+    .main-content p.contact-info a {
+        color: #0a4d8c;
+        text-decoration: none;
     }
     .section {
         margin-bottom: 25px;
@@ -95,6 +104,15 @@
     .icon {
         margin-right: 5px;
     }
+
+    /* Hide collapsible items by default on mobile */
+    .collapsible-content {
+        display: block;
+    }
+    .collapsed .collapsible-content {
+        display: none;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
         .resume-container {
@@ -103,6 +121,21 @@
         .sidebar, .main-content {
             width: 100%;
         }
+        .main-content h1 {
+            font-size: 22px;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+        }
+        .section h2 {
+            font-size: 16px;
+        }
+        .main-content p.contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 13px;
+        }
     }
 </style>
 </head>
@@ -110,50 +143,56 @@
 <div class="resume-container">
     <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Technical Skills</h2>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-brands fa-python icon"></i>Python</div>
-            <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
-        </div>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-brands fa-html5 icon"></i>HTML/CSS</div>
-            <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
-        </div>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-brands fa-js icon"></i>JavaScript</div>
-            <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
-        </div>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-brands fa-bootstrap icon"></i>Django & Bootstrap</div>
-            <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
-        </div>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-solid fa-database icon"></i>SQL</div>
-            <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
-        </div>
-        <div class="skill">
-            <div class="skill-name"><i class="fa-brands fa-linux icon"></i>Linux (Intermediate)</div>
-            <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
+        <h2 onclick="toggleSection(this)">Technical Skills <i class="fa-solid fa-chevron-down"></i></h2>
+        <div class="collapsible-content">
+            <div class="skill">
+                <div class="skill-name"><i class="fa-brands fa-python icon"></i>Python</div>
+                <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-name"><i class="fa-brands fa-html5 icon"></i>HTML/CSS</div>
+                <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-name"><i class="fa-brands fa-js icon"></i>JavaScript</div>
+                <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-name"><i class="fa-brands fa-bootstrap icon"></i>Django & Bootstrap</div>
+                <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-name"><i class="fa-solid fa-database icon"></i>SQL</div>
+                <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-name"><i class="fa-brands fa-linux icon"></i>Linux (Intermediate)</div>
+                <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
+            </div>
         </div>
 
-        <h2>Strengths</h2>
-        <ul>
-            <li>Quick Learner & Adaptable</li>
-            <li>Cybersecurity Enthusiast</li>
-            <li>Teamwork & Communication</li>
-        </ul>
+        <h2 onclick="toggleSection(this)">Strengths <i class="fa-solid fa-chevron-down"></i></h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Quick Learner & Adaptable</li>
+                <li>Cybersecurity Enthusiast</li>
+                <li>Teamwork & Communication</li>
+            </ul>
+        </div>
 
-        <h2>Education</h2>
-        <p>B.Sc. Computer Science<br>Guru Nanak Khalsa College, Mumbai<br>(Expected 2026)</p>
+        <h2 onclick="toggleSection(this)">Education <i class="fa-solid fa-chevron-down"></i></h2>
+        <div class="collapsible-content">
+            <p>B.Sc. Computer Science<br>Guru Nanak Khalsa College, Mumbai<br>(Expected 2026)</p>
+        </div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
         <h1>Dhinesh Samuvel Baskar</h1>
         <p class="contact-info">
-            <i class="fa-solid fa-envelope icon"></i>dhineshsamuvel@gmail.com | 
-            <i class="fa-solid fa-phone icon"></i>8976008966 | 
-            <i class="fa-solid fa-location-dot icon"></i>Mumbai, Maharashtra | 
+            <i class="fa-solid fa-envelope icon"></i> dhineshsamuvel@gmail.com  
+            <i class="fa-solid fa-phone icon"></i> 8976008966  
+            <i class="fa-solid fa-location-dot icon"></i> Mumbai, Maharashtra  
             <i class="fa-brands fa-github icon"></i><a href="https://github.com/yourusername" target="_blank"> GitHub</a>
         </p>
 
@@ -176,5 +215,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleSection(element) {
+        let parent = element.parentElement;
+        let content = element.nextElementSibling;
+        content.classList.toggle("collapsible-content");
+        parent.classList.toggle("collapsed");
+    }
+</script>
 </body>
 </html>
