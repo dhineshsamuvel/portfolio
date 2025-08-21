@@ -47,14 +47,6 @@ html, body {
     border-bottom: 1px solid #fff;
     padding-bottom: 5px;
     margin-bottom: 15px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.3s;
-}
-.sidebar h2:hover {
-    color: #ffdd57;
 }
 .sidebar ul {
     list-style: none;
@@ -127,16 +119,11 @@ html, body {
     text-decoration: underline;
 }
 
-/* Collapsible sections */
+/* Collapsible sections removed (always visible) */
 .collapsible-content {
-    display: none;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-}
-.collapsible-content.active {
     display: block;
-    max-height: 1000px;
+    overflow: visible;
+    max-height: none;
     padding-top: 10px;
 }
 
@@ -182,7 +169,7 @@ html, body {
             <i class="fa-solid fa-envelope icon"></i> <a href="mailto:dhineshsamuvel@gmail.com">dhineshsamuvel@gmail.com</a>  
             <i class="fa-solid fa-phone icon"></i> 8976008966  
             <i class="fa-solid fa-location-dot icon"></i> Mumbai, Maharashtra  
-            <i class="fa-brands fa-github icon"></i><a href="https://github.com/dhineshsamuvel/dhineshsamuvel" target="_blank"> GitHub</a>
+            <i class="fa-brands fa-github icon"></i><a href="https://github.com/dhineshsamuvel/" target="_blank"> GitHub</a>
         </p>
 
         <div class="section">
@@ -211,10 +198,10 @@ html, body {
         </div>
     </div>
 
-    <!-- Sidebar at the bottom -->
+    <!-- Sidebar -->
     <div class="sidebar">
-        <h2 onclick="toggleSection(this)">Technical Skills <i class="fa-solid fa-chevron-down"></i></h2>
-        <div class="collapsible-content active">
+        <h2>Technical Skills</h2>
+        <div class="collapsible-content">
             <div class="skill">
                 <div class="skill-name"><i class="fa-brands fa-python icon"></i>Python</div>
                 <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
@@ -241,8 +228,8 @@ html, body {
             </div>
         </div>
 
-        <h2 onclick="toggleSection(this)">Strengths <i class="fa-solid fa-chevron-down"></i></h2>
-        <div class="collapsible-content active">
+        <h2>Strengths</h2>
+        <div class="collapsible-content">
             <ul>
                 <li>Quick Learner & Adaptable</li>
                 <li>Problem Solver & Critical Thinker</li>
@@ -250,8 +237,8 @@ html, body {
             </ul>
         </div>
 
-        <h2 onclick="toggleSection(this)">Education <i class="fa-solid fa-chevron-down"></i></h2>
-        <div class="collapsible-content active">
+        <h2>Education</h2>
+        <div class="collapsible-content">
             <p>B.Sc. Computer Science<br>Guru Nanak Khalsa College, Mumbai<br>(Expected 2026)</p>
         </div>
     </div>
@@ -259,19 +246,6 @@ html, body {
 </div>
 
 <script>
-// Collapsible sections
-function toggleSection(element) {
-    let content = element.nextElementSibling;
-    content.classList.toggle("active");
-
-    let icon = element.querySelector("i");
-    if (content.classList.contains("active")) {
-        icon.classList.replace("fa-chevron-down", "fa-chevron-up");
-    } else {
-        icon.classList.replace("fa-chevron-up", "fa-chevron-down");
-    }
-}
-
 // Animate skill bars
 window.addEventListener('load', () => {
     document.querySelectorAll('.skill-level').forEach(skill => {
