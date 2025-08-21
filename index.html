@@ -37,8 +37,7 @@ html, body {
 .sidebar {
     background-color: #0a4d8c;
     color: #fff;
-    width: 30%;
-    min-width: 250px;
+    width: 100%; /* full width at bottom */
     padding: 20px;
 }
 .sidebar h2 {
@@ -82,7 +81,7 @@ html, body {
 
 /* Main Content */
 .main-content {
-    width: 70%;
+    width: 100%;
     min-width: 300px;
     padding: 30px 25px;
 }
@@ -142,7 +141,7 @@ html, body {
 @media (max-width: 768px) {
     .resume-container {
         flex-direction: column;
-        margin: 10px;
+        margin: 0 10px; /* reduced margin */
     }
     .sidebar, .main-content {
         width: 100%;
@@ -169,7 +168,36 @@ html, body {
 
 <div class="resume-container">
 
-    <!-- Sidebar -->
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Dhinesh Samuvel Baskar</h1>
+        <p class="contact-info">
+            <i class="fa-solid fa-envelope icon"></i> <a href="mailto:dhineshsamuvel@gmail.com">dhineshsamuvel@gmail.com</a>  
+            <i class="fa-solid fa-phone icon"></i> 8976008966  
+            <i class="fa-solid fa-location-dot icon"></i> Mumbai, Maharashtra  
+            <i class="fa-brands fa-github icon"></i><a href="https://github.com/yourusername" target="_blank"> GitHub</a>
+        </p>
+
+        <div class="section">
+            <h2>Career Objective</h2>
+            <p>3rd-year B.Sc. Computer Science student skilled in full-stack web development, deployment, and cloud technologies. Passionate about building secure, user-friendly applications with real business value. Experienced in deploying production-ready Django applications on Linux servers using Nginx and Gunicorn.</p>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <p><strong>Omic E-commerce Website</strong> – <a href="https://omicwears.tech" target="_blank">Live Demo</a> | <a href="https://github.com/yourusername/omic" target="_blank">GitHub</a></p>
+                <ul>
+                    <li>Full-stack e-commerce platform with login, shopping cart, and payment integration.</li>
+                    <li>Responsive UI using Bootstrap; backend with Django.</li>
+                    <li>Deployed on Oracle Cloud with Nginx and Gunicorn for production scalability.</li>
+                    <li>Configured PostgreSQL and optimized website performance on a Linux environment.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar at the bottom -->
     <div class="sidebar">
         <h2 onclick="toggleSection(this)">Technical Skills <i class="fa-solid fa-chevron-down"></i></h2>
         <div class="collapsible-content active">
@@ -211,35 +239,6 @@ html, body {
         <h2 onclick="toggleSection(this)">Education <i class="fa-solid fa-chevron-down"></i></h2>
         <div class="collapsible-content active">
             <p>B.Sc. Computer Science<br>Guru Nanak Khalsa College, Mumbai<br>(Expected 2026)</p>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1>Dhinesh Samuvel Baskar</h1>
-        <p class="contact-info">
-            <i class="fa-solid fa-envelope icon"></i> <a href="mailto:dhineshsamuvel@gmail.com">dhineshsamuvel@gmail.com</a>  
-            <i class="fa-solid fa-phone icon"></i> 8976008966  
-            <i class="fa-solid fa-location-dot icon"></i> Mumbai, Maharashtra  
-            <i class="fa-brands fa-github icon"></i><a href="https://github.com/yourusername" target="_blank"> GitHub</a>
-        </p>
-
-        <div class="section">
-            <h2>Career Objective</h2>
-            <p>3rd-year B.Sc. Computer Science student skilled in full-stack web development, deployment, and cloud technologies. Passionate about building secure, user-friendly applications with real business value. Experienced in deploying production-ready Django applications on Linux servers using Nginx and Gunicorn.</p>
-        </div>
-
-        <div class="section">
-            <h2>Projects</h2>
-            <div class="projects">
-                <p><strong>Omic E-commerce Website</strong> – <a href="https://omicwears.tech" target="_blank">Live Demo</a> | <a href="https://github.com/yourusername/omic" target="_blank">GitHub</a></p>
-                <ul>
-                    <li>Full-stack e-commerce platform with login, shopping cart, and payment integration.</li>
-                    <li>Responsive UI using Bootstrap; backend with Django.</li>
-                    <li>Deployed on Oracle Cloud with Nginx and Gunicorn for production scalability.</li>
-                    <li>Configured PostgreSQL and optimized website performance on a Linux environment.</li>
-                </ul>
-            </div>
         </div>
     </div>
 
