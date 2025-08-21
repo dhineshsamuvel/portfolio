@@ -175,7 +175,7 @@
         <div class="collapsible-content">
             <ul>
                 <li>Quick Learner & Adaptable</li>
-                <li>Cybersecurity Enthusiast</li>
+                <li>Problem Solver & Critical Thinker</li>
                 <li>Teamwork & Communication</li>
             </ul>
         </div>
@@ -224,5 +224,30 @@
         parent.classList.toggle("collapsed");
     }
 </script>
+<style>
+    /* Hide collapsible items by default */
+    .collapsible-content {
+        display: none;
+    }
+    .collapsible-content.active {
+        display: block;
+    }
+</style>
+
+<script>
+    function toggleSection(element) {
+        let content = element.nextElementSibling;
+        content.classList.toggle("active");
+
+        // Toggle arrow icon direction
+        let icon = element.querySelector("i");
+        if (content.classList.contains("active")) {
+            icon.classList.replace("fa-chevron-down", "fa-chevron-up");
+        } else {
+            icon.classList.replace("fa-chevron-up", "fa-chevron-down");
+        }
+    }
+</script>
+
 </body>
 </html>
